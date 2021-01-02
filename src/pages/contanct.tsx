@@ -2,18 +2,18 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import React from 'react'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    homeRoot: {
-      backgroundColor: '#1d1d1d'
+    contactRoot: {
+      backgroundColor: '#000'
     }
 }))
 
-const HomePage: React.FC = () => {
+const ContactPage: React.FC = () => {
   const classes = useStyles()
   return (
-      <div className={classes.homeRoot}>
+      <div className={classes.contactRoot}>
           homepageasdasdasdasdsa
       </div>
   )
 }
 
-export default HomePage
+export default ContactPage

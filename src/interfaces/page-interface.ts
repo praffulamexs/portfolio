@@ -1,6 +1,6 @@
 interface PageType {
     value: string
-    page: React.FC
+    page: any
     icon: any
 }
 

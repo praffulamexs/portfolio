@@ -4,7 +4,10 @@ import Nav from '../components/nav';
 import PageType from '../interfaces/page-interface';
 import HomePage from './home';
 
-import { Home, Info } from '@material-ui/icons/';
+import { HomeOutlined, InfoOutlined, PermContactCalendarOutlined, SettingsOutlined } from '@material-ui/icons/';
+import AboutPage from './about';
+import SkillsPage from './skills';
+import ContactPage from './contanct';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     mainRoot: {
@@ -24,15 +27,17 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         borderRadius: 0,
     },
     contentDiv: {
-        width: '100vw',
         height:' 100vh',
+        paddingLeft: 60
     }
 }))
 
 
 const pages: PageType[] = [
-    { value: 'Home', page: HomePage, icon: <Home /> },
-    { value: 'About', page: HomePage, icon: <Info /> },
+    { value: 'Home', page: <HomePage />, icon: <HomeOutlined /> },
+    { value: 'About', page: <AboutPage />, icon: <InfoOutlined /> },
+    { value: 'Skills', page: <SkillsPage />, icon: <SettingsOutlined /> },
+    { value: 'Contact', page: <ContactPage />, icon: <PermContactCalendarOutlined /> },
 ]
 
 const MainPage: React.FC = () => {
@@ -49,7 +54,7 @@ const MainPage: React.FC = () => {
             <Nav pages={pages} selected={page} changePage={(page: PageType) => changePage(page)} />
           </Paper>
           <div className={classes.contentDiv}>
-            
+            {page.page}
           </div>
       </Container>
   )
