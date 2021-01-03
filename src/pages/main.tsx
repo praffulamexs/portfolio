@@ -1,13 +1,14 @@
-import { Box, Container, createStyles, makeStyles, Paper, Theme } from '@material-ui/core';
+import { Container, createStyles, makeStyles, Paper, Theme } from '@material-ui/core';
 import React from 'react'
 import Nav from '../components/nav';
 import PageType from '../interfaces/page-interface';
 import HomePage from './home';
 
-import { HomeOutlined, InfoOutlined, PermContactCalendarOutlined, SettingsOutlined } from '@material-ui/icons/';
+import { HomeOutlined, InfoOutlined, PermContactCalendarOutlined, SettingsOutlined, WorkOutline } from '@material-ui/icons/';
 import AboutPage from './about';
 import SkillsPage from './skills';
 import ContactPage from './contanct';
+import WorkPage from './work';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     mainRoot: {
@@ -36,8 +37,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const pages: PageType[] = [
     { value: 'Home', page: <HomePage />, icon: <HomeOutlined /> },
     { value: 'About', page: <AboutPage />, icon: <InfoOutlined /> },
+    { value: 'Work and Education', page: <WorkPage />, icon: <WorkOutline /> },
     { value: 'Skills', page: <SkillsPage />, icon: <SettingsOutlined /> },
-    { value: 'Contact', page: <ContactPage />, icon: <PermContactCalendarOutlined /> },
 ]
 
 const MainPage: React.FC = () => {

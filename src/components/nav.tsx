@@ -1,8 +1,8 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import React from 'react'
 import NavType from '../interfaces/nav-interface';
-import PageType from '../interfaces/page-interface';
 import NavTabs from './nav-tab';
+import Social from './social';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     navRoot: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
       }
     },
     menuDiv: {
-      flex: 14,
+      flex: 10,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center'
@@ -48,7 +48,7 @@ const Nav: React.FC<NavType> = ({ pages, selected, changePage }) => {
           <NavTabs pages={pages} selected={selected} changePage={changePage} />
         </div>
         <div className={classes.socialDiv}>
-
+          <Social />
         </div>
       </div>
   )

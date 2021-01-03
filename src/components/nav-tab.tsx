@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         paddingTop: 20,
         paddingBottom: 20,
         textAlign: 'center',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        transition: 'background-color 1s',
+        '&:hover': {
+            backgroundColor: 'black'
+        }
     },
     selected: {
         color: '#08fdd8',
@@ -32,7 +36,7 @@ const NavTabs: React.FC<NavType> = ({ pages, selected, changePage }) => {
                     key={index} 
                     className={page.value.toLowerCase() === selected.value.toLowerCase() ? `${classes.tab} ${classes.selected}` : `${classes.tab} ${classes.unselected}`}
                 >
-                    <Tooltip title={page.value}>
+                    <Tooltip placement='right' title={page.value}>
                         {page.icon}
                     </Tooltip>
                 </div>
